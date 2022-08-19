@@ -4,19 +4,17 @@ import rain from "./rain.png";
 import clouds from "./clouds.png";
 import sunny from "./sunny.png";
 
-
 const CitySelector = () => {
-  
+
+  const apikey = process.env.REACT_APP_API_KEY;
+
   const [city, setCity] = useState('London');
   const [apiData, setApiData] = useState({});
-  const [getCity, setGetCity] = useState('');
-
+  const [getCity, setGetCity] = useState('London');
   
-
-
-  const apiKey ='5f9953639d586ea3ffc8c4592c94bc01'
+ 
   const startUrl = 'https://api.openweathermap.org'
-  const url = `${startUrl}/data/2.5/forecast?q=${city}&appid=${apiKey}`
+  const url = `${startUrl}/data/2.5/forecast?q=${city}&appid=${apikey}`
 
 
   // Side effect
